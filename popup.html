@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>POS Weight</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 12px; width: 260px; }
+    label { display: block; font-size: 12px; margin-top: 8px; }
+    input { width: 100%; box-sizing: border-box; padding: 6px; }
+    button { width: 100%; padding: 8px; margin-top: 8px; }
+    .row { display: flex; gap: 8px; }
+    .row > * { flex: 1; }
+  </style>
+</head>
+<body>
+  <h3 style="margin:0 0 8px 0;">POS Weight</h3>
+
+  <label>Prefijo (2 dígitos)
+    <input id="prefix" type="text" maxlength="2" placeholder="20" />
+  </label>
+
+  <label>Nº producto (5 dígitos)
+    <input id="product" type="text" maxlength="5" placeholder="00000" />
+  </label>
+
+  <button id="save">Guardar</button>
+
+  <div class="row">
+    <button id="connect-btn">Conectar</button>
+    <button id="disconnect-btn" disabled>Desconectar</button>
+  </div>
+
+  <p style="font-size:11px;color:#666;margin-top:8px;">
+    En el POS, presiona <b>F9</b> para enviar EAN-13 al emulador C#.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

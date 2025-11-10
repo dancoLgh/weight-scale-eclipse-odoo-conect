@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "POS Weight Reader + EAN13",
+  "version": "1.0.0",
+  "description": "Lee la balanza y envía EAN-13 al emulador C#",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:12345/*",
+    "http://localhost:12345/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "POS Weight",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "options_page": "options.html"
+}
